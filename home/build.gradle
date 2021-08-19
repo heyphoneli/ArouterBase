@@ -1,0 +1,65 @@
+//1、区分module是app或者库
+if (isHomeCanRunAsApp.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+
+android {
+    compileSdk 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        //2、module是app时，需要指定包名
+        if (isHomeCanRunAsApp.toBoolean()) {
+            applicationId "com.example.home"
+        }
+        minSdk 21
+        targetSdk 30
+        versionCode 1
+        versionName "1.0"
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+            }
+        }
+    }
+    viewBinding {
+        enabled = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    sourceSets {
+        main {
+            // 3、module是app时，需要额外指定清单文件，activity不管是app还是lib，都需要在清单内声明
+            if (isHomeCanRunAsApp.toBoolean()) {
+                manifest.srcFile 'src/main/moduleManifest/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            }
+        }
+    }
+
+}
+
+dependencies {
+
+    implementation project(":commonlib")
+    kapt 'com.alibaba:arouter-compiler:1.5.1'
+
+
+}

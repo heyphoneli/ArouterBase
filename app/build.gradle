@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.alibaba.arouter'
+android {
+    compileSdk 30
+
+    defaultConfig {
+        applicationId "com.example.jetpack"
+        minSdk 21
+        targetSdk 30
+        versionCode 1
+        versionName "1.0"
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+                arg("AROUTER_GENERATE_DOC", true)
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    viewBinding{
+        enabled = true
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+//kapt {
+//    javacOptions {
+//        // These options are normally set automatically via the Hilt Gradle plugin, but we
+//        // set them manually to workaround a bug in the Kotlin 1.5.20
+//        option("-Adagger.fastInit=ENABLED")
+//        option("-Adagger.hilt.android.internal.disableAndroidSuperclassValidation=true")
+//    }
+//}
+dependencies {
+    implementation project(':commonlib')
+    implementation project(':home')
+    implementation project(':cart')
+    implementation project(':mine')
+    implementation project(':user')
+    kapt 'com.alibaba:arouter-compiler:1.5.1'
+}
