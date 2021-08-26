@@ -1,20 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.commonlib.view.MoveableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/userinfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="查看用户信息，（检测到未登录时跳转登录）" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/lasttime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="last_login_time" />
-</LinearLayout>
+        <TextView
+            android:id="@+id/userinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="查看用户信息，（检测到未登录时跳转登录）" />
+
+        <TextView
+            android:id="@+id/lasttime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/userinfo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="last_login_time" />
+    </LinearLayout>
+
+
+    <View
+        android:clickable="true"
+        android:id="@+id/touch_view"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"
+        android:background="#00f" />
+</com.example.commonlib.view.MoveableLayout>
