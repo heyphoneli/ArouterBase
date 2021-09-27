@@ -11,7 +11,7 @@
 - app依赖home、cart、mine、commonlib
 - home、cart、mine、user分别依赖commonlib
 - ### 3.模块说明：
-- app：壳模块，用户打包所有模块
+- app：壳模块，用于打包所有模块
 - home：首页，可以从cart提供的服务中获取购物车内容，且可以添加到购物车
 - cart：购物车，提供外部操作购物车服务接口实现
 - mine：我的，从user模块提供的服务中获取登录信息
@@ -60,7 +60,7 @@ defaultConfig {
 kapt { arguments { arg("AROUTER_MODULE_NAME", project.getName()) } }
 }
 ```
-- 6）使用viewding
+- 6）使用viewbinding
 ```
 viewBinding{ enabled=true }
 ```
