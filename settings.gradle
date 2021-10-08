@@ -1,0 +1,16 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
+    }
+}
+rootProject.name = "ComponentBase"
+include ':app'
+include ':commonlib'
+include ':home'
+include ':cart'
+include ':mine'
+include ':user'
+include ':network'

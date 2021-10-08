@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ComponentBase.iml" filepath="$PROJECT_DIR$/.idea/modules/ComponentBase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ComponentBase.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ComponentBase.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cart/ComponentBase.cart.iml" filepath="$PROJECT_DIR$/.idea/modules/cart/ComponentBase.cart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/commonlib/ComponentBase.commonlib.iml" filepath="$PROJECT_DIR$/.idea/modules/commonlib/ComponentBase.commonlib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/home/ComponentBase.home.iml" filepath="$PROJECT_DIR$/.idea/modules/home/ComponentBase.home.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mine/ComponentBase.mine.iml" filepath="$PROJECT_DIR$/.idea/modules/mine/ComponentBase.mine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/network/ComponentBase.network.iml" filepath="$PROJECT_DIR$/.idea/modules/network/ComponentBase.network.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/user/ComponentBase.user.iml" filepath="$PROJECT_DIR$/.idea/modules/user/ComponentBase.user.iml" />
+    </modules>
+  </component>
+</project>
